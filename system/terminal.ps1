@@ -1,17 +1,27 @@
 . $PSScriptRoot\..\lib\PkgsI.ps1
 . $PSScriptRoot\..\lib\WriteFile.ps1
-Write-Host "`n-- TERMINAL SETUP --" -ForegroundColor Blue
+Write-Host "`n-- Terminal setup --" -ForegroundColor Blue
 
-Write-Host "`nInstalling terminal packages..." -ForegroundColor Green
-
+# terminal packages
 PkgsI -p @(
     'JanDeDobbeleer.OhMyPosh',
     'wez.wezterm',
     'Microsoft.PowerShell'
+    'Nvim.Nvim'
 )
 
-Write-Host "`nInstalling PowerShell modules..." -ForegroundColor Green
+# profile
+WriteFile -path $PROFILE -content @"
 
+clear
+oh-my-posh init pwsh --config "C:\Users\kappy\AppData\Local\Programs\oh-my-posh\themes\thecyberden.omp.json" | Invoke-Expression
+fastfetch --logo small --color blue --title-color-at green --separator-output-color green -s title:separator:os:kernel:uptime:shell:terminal:cpuUsage:memory
+Import-Module Terminal-Icons
+fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression
+
+"@
+
+# powershell modules
 if (-not (Get-Module Terminal-Icons)) {
     Install-Module -Name Terminal-Icons -Repository PSGallery
 }
@@ -19,63 +29,39 @@ if (-not (Get-Module PSReadLine)) {
     Install-Module -Name PSReadLine -AllowClobber -Force
 }
 
-Write-Host "`n`$PROFILE setup..." -ForegroundColor Green
-
-WriteFile -path $PROFILE -content @"
-
-oh-my-posh init pwsh --config "$env:USERPROFILE\AppData\Local\Programs\oh-my-posh\themes\thecyberden.omp.json" | Invoke-Expression
-fastfetch --logo "Windows" --color blue --title-color-at green --separator-output-color green -s title:separator:os:kernel:uptime:shell:terminal:cpuUsage:memory:disk:custom:colors
-Import-Module Terminal-Icons
-fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression
-
-"@
-
-Write-Host "`nWezTerm setup..." -ForegroundColor Green
-
+# wezterm config
 WriteFile -path "$env:USERPROFILE\.wezterm.lua" -content @"
 
 local wezterm = require("wezterm")
 return {
-	font = wezterm.font_with_fallback({ "CaskaydiaCove Nerd Font" }),
-	font_size = 12.0,
-	color_scheme = "OneDark (base16)",
-	hide_tab_bar_if_only_one_tab = true,
-	window_close_confirmation = "NeverPrompt",
-	default_prog = { 'pwsh' },
-	initial_rows = 32,
-	initial_cols = 90,
-	use_fancy_tab_bar = false,
+    font = wezterm.font_with_fallback({ "CaskaydiaCove Nerd Font" }),
+    font_size = 12.0,
+    color_scheme = "OneDark (base16)",
+    hide_tab_bar_if_only_one_tab = true,
+    window_close_confirmation = "NeverPrompt",
+    default_prog = { 'pwsh', '-NoLogo' },
+    initial_rows = 32,
+    initial_cols = 90,
+    use_fancy_tab_bar = false,
+
     colors = {
         tab_bar = {
-          background = "#282c34",
-          active_tab = {
-            bg_color = "#c679dc",
-            fg_color = "#000000",
-          },
-          inactive_tab = {
-            bg_color = "#301d36",
-            fg_color = "#abb3be",
-          },
-          inactive_tab_hover = {
-            bg_color = "#301d36",
-            fg_color = "#abb3be",
-          },
-          new_tab = {
-            bg_color = "#301d36",
-            fg_color = "#808080",
-          },
-          new_tab_hover = {
-            bg_color = "#301d36",
-            fg_color = "#808080",
-          },
+            background = "#282c34",
+            active_tab = { bg_color = "#c679dc", fg_color = "#000000" },
+            inactive_tab = { bg_color = "#301d36", fg_color = "#abb3be" },
+            inactive_tab_hover = { bg_color = "#301d36", fg_color = "#abb3be"},
+            new_tab = { bg_color = "#301d36", fg_color = "#808080" },
+            new_tab_hover = { bg_color = "#301d36", fg_color = "#808080" },
         },
     }
 }
 
 "@
 
-Write-Host "`nOh My Posh setup..." -ForegroundColor Green
+# nvim config
+git clone https://github.com/SoyAlejandroCalixto/nvim-config $env:USERPROFILE\AppData\Local\nvim
 
+# oh my posh config
 WriteFile -path "$env:USERPROFILE\AppData\Local\Programs\oh-my-posh\themes\thecyberden.omp.json" -content @"
 
 {
@@ -133,3 +119,4 @@ WriteFile -path "$env:USERPROFILE\AppData\Local\Programs\oh-my-posh\themes\thecy
 }
 
 "@
+

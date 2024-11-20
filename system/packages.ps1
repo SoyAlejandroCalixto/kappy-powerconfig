@@ -1,7 +1,7 @@
 . $PSScriptRoot\..\lib\PkgsI.ps1
-Write-Host "`n-- INSTALLING PACKAGES --" -ForegroundColor Blue
+Write-Host "`n-- Installing packages --" -ForegroundColor Blue
 
-# winget packages ->
+# winget packages
 PkgsI -p @(
     'Microsoft.VisualStudioCode',
     'Microsoft.VisualStudio.2022.Community',
@@ -32,11 +32,12 @@ PkgsI -p @(
     'Python.Python.3.13'
 )
 
-# scoop buckets and packages ->
+# scoop buckets and packages
 scoop bucket add games
 scoop bucket add versions
 
 PkgsI -pm "scoop" -p @(
+    'mingw'
     'games/battlenet'
     'versions/zed-nightly'
 )
