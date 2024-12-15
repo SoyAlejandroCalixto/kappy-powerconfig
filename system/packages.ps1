@@ -35,11 +35,13 @@ PkgsI -p @(
 # scoop buckets and packages
 scoop bucket add games
 scoop bucket add versions
+scoop bucket add nerd-fonts
 
 PkgsI -pm "scoop" -p @(
-    'mingw'
-    'games/battlenet'
-    'versions/zed-nightly'
+    'mingw',
+    'games/battlenet',
+    'versions/zed-nightly',
+    'nerd-fonts/CascadiaCode-NF'
 )
 
 Write-Host "`nApplications provided by installer only will open their download pages in your browser for installation..." -ForegroundColor Green

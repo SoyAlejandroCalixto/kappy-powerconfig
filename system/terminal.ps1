@@ -6,8 +6,9 @@ Write-Host "`n-- Terminal setup --" -ForegroundColor Blue
 PkgsI -p @(
     'JanDeDobbeleer.OhMyPosh',
     'wez.wezterm',
-    'Microsoft.PowerShell'
-    'Nvim.Nvim'
+    'Microsoft.PowerShell',
+    'Nvim.Nvim',
+    'fzf'
 )
 
 # profile
@@ -15,10 +16,21 @@ WriteFile -path $PROFILE -content @"
 
 clear
 oh-my-posh init pwsh --config "C:\Users\kappy\AppData\Local\Programs\oh-my-posh\themes\thecyberden.omp.json" | Invoke-Expression
-fastfetch --logo small --color blue --title-color-at green --separator-output-color green -s title:separator:os:kernel:uptime:shell:terminal:cpuUsage:memory
+fastfetch --logo $PROFILE\..\on_terminal_enter.txt --logo-color-1 blue --logo-color-2 blue --logo-padding-right 2 --color green -s os:kernel:uptime:shell:cpuUsage:memory --key-type icon --separator "  "
 Import-Module Terminal-Icons
 fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression
+Set-Alias vim nvim
 
+"@
+
+# fastfetch ascii
+WriteFile -path $PROFILE\..\on_terminal_enter.txt -content @"
+   ___
+___|$|___
+|Z@%#%@Z|
+   |$|
+   |$|
+   |Z|
 "@
 
 # powershell modules
@@ -34,8 +46,10 @@ WriteFile -path "$env:USERPROFILE\.wezterm.lua" -content @"
 
 local wezterm = require("wezterm")
 return {
+    window_background_opacity = 0.8,
+    win32_system_backdrop = "Acrylic",
     font = wezterm.font_with_fallback({ "CaskaydiaCove Nerd Font" }),
-    font_size = 12.0,
+    font_size = 13.0,
     freetype_load_target = "Light",
     color_scheme = "OneDark (base16)",
     hide_tab_bar_if_only_one_tab = true,
