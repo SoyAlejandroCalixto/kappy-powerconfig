@@ -9,7 +9,6 @@ PkgsI -p @(
     'DolphinEmulator.Dolphin',
     'PCSX2Team.PCSX2',
     'Brave.Brave',
-    'Nvidia.GeForceExperience',
     'VideoLAN.VLC',
     'Git.Git',
     'Spotify.Spotify',
