@@ -48,3 +48,8 @@ function AutomaticUpdates {
         Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name NoAutoUpdate -Value 1
     }
 }
+
+function AddStartupApp {
+    param ([string]$name, [string]$path)
+    New-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name $name -Value $path -PropertyType String
+}

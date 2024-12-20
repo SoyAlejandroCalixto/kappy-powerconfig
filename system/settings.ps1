@@ -5,3 +5,5 @@ SetTheme dark
 TaskbarCentered $true
 MouseAcceleration $false
 AutomaticUpdates $false
+
+AddStartupApp -name "rainmeter" -path "C:\Program Files\Rainmeter\Rainmeter.exe"
