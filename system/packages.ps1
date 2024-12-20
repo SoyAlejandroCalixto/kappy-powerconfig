@@ -48,9 +48,7 @@ Write-Host "`nApplications provided by installer only will open their download p
 
 $appsProvidedByInstaller = @(
     'https://suyu.dev/',
-    'https://www.blackmagicdesign.com/es/products/davinciresolve',
-    'https://www.meldaproduction.com/downloads',
-    'https://www.voxengo.com/product/marvelgeq/'
+    'https://www.blackmagicdesign.com/es/products/davinciresolve'
 )
 foreach ($app in $appsProvidedByInstaller) {
     Start-Process $app
