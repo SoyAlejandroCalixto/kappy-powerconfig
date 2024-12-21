@@ -7,7 +7,8 @@ PkgsI -p @(
     'JanDeDobbeleer.OhMyPosh',
     'wez.wezterm',
     'Microsoft.PowerShell',
-    'Nvim.Nvim',
+    'Neovim.Neovim',
+    'gerardog.gsudo',
     'fzf'
 )
 

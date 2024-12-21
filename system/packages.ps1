@@ -28,7 +28,6 @@ PkgsI -p @(
     'Schniz.fnm',
     'Python.Python.3.13',
     'Spotify.Spotify',
-    'gerardog.gsudo'
 )
 
 
