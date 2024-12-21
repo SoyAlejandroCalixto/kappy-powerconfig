@@ -34,12 +34,8 @@ ___|$|___
 "@
 
 # powershell modules
-if (-not (Get-Module Terminal-Icons)) {
-    Install-Module -Name Terminal-Icons -Repository PSGallery
-}
-if (-not (Get-Module PSReadLine)) {
-    Install-Module -Name PSReadLine -AllowClobber -Force
-}
+sudo Install-Module -Name Terminal-Icons -Repository PSGallery
+sudo Install-Module -Name PSReadLine -AllowClobber -Force
 
 # wezterm config
 WriteFile -path "$env:USERPROFILE\.wezterm.lua" -content @"
@@ -134,4 +130,3 @@ WriteFile -path "$env:USERPROFILE\AppData\Local\Programs\oh-my-posh\themes\thecy
 }
 
 "@
-

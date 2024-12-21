@@ -1,9 +1,8 @@
-$isScoopInstalled = Get-Command scoop -ErrorAction SilentlyContinue
+# scoop installation if not installed
+$isScoopInstalled = Get-Command scoop -ErrorAction SilentlyContinue 
+
 if (-not $isScoopInstalled) {
     Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-    if (!(Get-Command git -ErrorAction SilentlyContinue)) {
-        winget install Git.Git # git is required as previous dependency for scoop installation
-    }
     Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 }
 
@@ -13,15 +12,22 @@ enum PackageManager {
 }
 
 function PkgsI {
-    param ([string]$pm, [string[]]$p)
+    param ([string]$pm, [string[]]$p, [switch]$asAdmin)
     
     foreach ($pkg in $p) {
         Write-Host "`nInstalling $pkg..." -ForegroundColor Green
-
         if ($pm -eq "scoop") {
-            scoop install $pkg
+            if ($asAdmin) {
+                sudo scoop install $pkg
+            } else {
+                scoop install $pkg
+            }
         } else {
-            winget install $pkg --silent --accept-package-agreements --accept-source-agreements
+            if ($asAdmin) {
+                sudo winget install $pkg --silent --accept-package-agreements --accept-source-agreements
+            } else {
+                winget install $pkg --silent --accept-package-agreements --accept-source-agreements
+            }
         }
     }
 }

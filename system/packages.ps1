@@ -11,7 +11,6 @@ PkgsI -p @(
     'Brave.Brave',
     'VideoLAN.VLC',
     'Git.Git',
-    'Spotify.Spotify',
     'OBSProject.OBSStudio',
     'Bitwarden.Bitwarden',
     'Discord.Discord',
@@ -25,11 +24,13 @@ PkgsI -p @(
     'Libretro.RetroArch',
     'HandBrake.HandBrake',
     'fastfetch',
-    'RamenSoftware.Windhawk',
     'Google.AndroidStudio',
     'Schniz.fnm',
-    'Python.Python.3.13'
+    'Python.Python.3.13',
+    'Spotify.Spotify',
+    'gerardog.gsudo'
 )
+
 
 # scoop buckets and packages
 scoop bucket add games
@@ -38,10 +39,14 @@ scoop bucket add nerd-fonts
 
 PkgsI -pm "scoop" -p @(
     'mingw',
-    'games/battlenet',
     'versions/zed-nightly',
     'nerd-fonts/CascadiaCode-NF'
 )
+
+# packages that require admin privileges
+PkgsI -pm "scoop" -p @( 
+    'games/battlenet'
+) -asAdmin
 
 Write-Host "`nApplications provided by installer only will open their download pages in your browser for installation..." -ForegroundColor Green
 
