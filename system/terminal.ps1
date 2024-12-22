@@ -9,7 +9,8 @@ PkgsI -p @(
     'Microsoft.PowerShell',
     'Neovim.Neovim',
     'gerardog.gsudo',
-    'fzf'
+    'fzf',
+    'yt-dlp'
 )
 
 # profile
