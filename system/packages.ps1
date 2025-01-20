@@ -52,7 +52,7 @@ Write-Host "`nApplications provided by installer only will open their download p
 $appsProvidedByInstaller = @(
     'https://suyu.dev/',
     'https://www.blackmagicdesign.com/es/products/davinciresolve',
-    'https://www.nvidia.com/es-es/software/nvidia-app/'
+    'https://www.amd.com/es/products/software/adrenalin.html'
 )
 foreach ($app in $appsProvidedByInstaller) {
     Start-Process $app
