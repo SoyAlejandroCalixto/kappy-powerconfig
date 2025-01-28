@@ -4,7 +4,6 @@ Write-Host "`n-- Installing packages --" -ForegroundColor Blue
 # winget packages
 PkgsI -p @(
     'Microsoft.VisualStudioCode',
-    'Microsoft.VisualStudio.2022.Community',
     'Microsoft.PowerToys',
     'DolphinEmulator.Dolphin',
     'PCSX2Team.PCSX2',
@@ -38,7 +37,6 @@ scoop bucket add nerd-fonts
 
 PkgsI -pm "scoop" -p @(
     'mingw',
-    'versions/zed-nightly',
     'nerd-fonts/CascadiaCode-NF'
 )
 
