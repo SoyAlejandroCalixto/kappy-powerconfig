@@ -5,7 +5,6 @@ Write-Host "`n-- Installing packages --" -ForegroundColor Blue
 PkgsI -p @(
     'Microsoft.VisualStudioCode',
     'Microsoft.PowerToys',
-    'DolphinEmulator.Dolphin',
     'PCSX2Team.PCSX2',
     'Brave.Brave',
     'VideoLAN.VLC',
@@ -37,7 +36,8 @@ scoop bucket add nerd-fonts
 
 PkgsI -pm "scoop" -p @(
     'mingw',
-    'nerd-fonts/CascadiaCode-NF'
+    'nerd-fonts/CascadiaCode-NF'.
+    'games/dolphin-dev'
 )
 
 # packages that require admin privileges
