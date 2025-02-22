@@ -15,7 +15,6 @@ PkgsI -p @(
     'M2Team.NanaZip',
     'WhatsApp',
     'Valve.Steam',
-    'Rainmeter.Rainmeter',
     'Telegram.TelegramDesktop',
     'Audacity.Audacity',
     'qBittorrent.qBittorrent',

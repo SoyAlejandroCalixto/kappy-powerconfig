@@ -7,5 +7,3 @@ MouseAcceleration $false
 AutomaticUpdates $false
 TaskbarSearchBar $false
 TaskView $false
-
-AddStartupApp -name "rainmeter" -path "C:\Program Files\Rainmeter\Rainmeter.exe"
