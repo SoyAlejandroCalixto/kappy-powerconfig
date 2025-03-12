@@ -10,6 +10,7 @@ PkgsI -p @(
     'Neovim.Neovim',
     'gerardog.gsudo',
     'fzf',
+    'gokcehan.lf',
     'yt-dlp'
 )
 
@@ -37,7 +38,9 @@ wezterm.on('update-right-status', function(window, pane)
 
     local cwd = tostring(pane:get_current_working_dir())
     cwd = cwd:gsub("file:///C:/", "")
+    cwd = cwd:gsub("file://w11", " ") -- for WSL
     cwd = cwd:gsub("Users/"..os.getenv("USERNAME").."/", "~")
+    cwd = cwd:gsub("/home/"..os.getenv("USERNAME"), "~") -- for WSL
     cwd = " "..cwd.." 󰝰 "
 
     local hostname = wezterm.hostname()
