@@ -5,5 +5,5 @@ function WriteFile {
     if (-not (Test-Path $dir)) {
         New-Item -ItemType Directory -Path $dir -Force
     }
-    $content > $path
+    $content | Out-File -FilePath $path -Encoding UTF8
 }
