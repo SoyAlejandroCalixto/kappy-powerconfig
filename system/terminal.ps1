@@ -93,9 +93,6 @@ return {
 
 "@
 
-# nvim config
-git clone https://github.com/SoyAlejandroCalixto/nvim-config $env:USERPROFILE\AppData\Local\nvim
-
 # oh my posh config
 WriteFile -path "$env:USERPROFILE\AppData\Local\Programs\oh-my-posh\themes\thecyberden.omp.json" -content @"
 
