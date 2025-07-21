@@ -3,7 +3,6 @@ Write-Host "`n-- Installing packages --" -ForegroundColor Blue
 
 # winget packages
 PkgsI -p @(
-    'Microsoft.VisualStudioCode',
     'Microsoft.PowerToys',
     'PCSX2Team.PCSX2',
     'Brave.Brave',
@@ -36,7 +35,8 @@ scoop bucket add nerd-fonts
 PkgsI -pm "scoop" -p @(
     'mingw',
     'nerd-fonts/CascadiaCode-NF'.
-    'games/dolphin-dev'
+    'games/dolphin-dev',
+    'versions/zed-nightly'
 )
 
 # packages that require admin privileges
