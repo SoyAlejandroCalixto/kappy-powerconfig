@@ -18,13 +18,13 @@ function PkgsI {
         Write-Host "`nInstalling $pkg..." -ForegroundColor Green
         if ($pm -eq "scoop") {
             if ($asAdmin) {
-                sudo scoop install $pkg
+                gsudo scoop install $pkg
             } else {
                 scoop install $pkg
             }
         } else {
             if ($asAdmin) {
-                sudo winget install $pkg --silent --accept-package-agreements --accept-source-agreements
+                gsudo winget install $pkg --silent --accept-package-agreements --accept-source-agreements
             } else {
                 winget install $pkg --silent --accept-package-agreements --accept-source-agreements
             }
