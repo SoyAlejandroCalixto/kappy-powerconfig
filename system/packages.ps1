@@ -38,11 +38,6 @@ PkgsI -pm "scoop" -p @(
     'versions/zed-nightly'
 )
 
-# packages that require admin privileges
-PkgsI -pm "scoop" -p @( 
-    'games/battlenet'
-) -asAdmin
-
 Write-Host "`nApplications provided by installer only will open their download pages in your browser for installation..." -ForegroundColor Green
 
 $appsProvidedByInstaller = @(
