@@ -34,7 +34,7 @@ scoop bucket add nerd-fonts
 
 PkgsI -pm "scoop" -p @(
     'mingw',
-    'nerd-fonts/CascadiaCode-NF'.
+    'nerd-fonts/CascadiaCode-NF',
     'games/dolphin-dev',
     'versions/zed-nightly'
 )
