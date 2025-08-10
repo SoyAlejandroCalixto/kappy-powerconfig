@@ -20,7 +20,6 @@ PkgsI -p @(
     'Libretro.RetroArch',
     'HandBrake.HandBrake',
     'fastfetch',
-    'Google.AndroidStudio',
     'Schniz.fnm',
     'Python.Python.3.13',
     'Spotify.Spotify'
