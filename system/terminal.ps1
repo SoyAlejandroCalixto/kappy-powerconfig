@@ -26,8 +26,8 @@ Set-Alias vim nvim
 "@
 
 # powershell modules
-sudo Install-Module -Name Terminal-Icons -Repository PSGallery
-sudo Install-Module -Name PSReadLine -AllowClobber -Force
+gsudo Install-Module -Name Terminal-Icons -Repository PSGallery
+gsudo Install-Module -Name PSReadLine -AllowClobber -Force
 
 # wezterm config
 WriteFile -path "$env:USERPROFILE\.wezterm.lua" -content @"
