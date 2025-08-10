@@ -62,12 +62,12 @@ function MouseAcceleration {
 function AutomaticUpdates {
     param ([bool]$enabled)
     if (-not (Test-Path "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate\AU")) {
-        sudo New-Item -Path "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate" -Name "AU" -Force
+        gsudo New-Item -Path "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate" -Name "AU" -Force
     }
     if ($enabled) {
-        sudo Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name NoAutoUpdate -Value 0
+        gsudo Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name NoAutoUpdate -Value 0
     } else {
-        sudo Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name NoAutoUpdate -Value 1
+        gsudo Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name NoAutoUpdate -Value 1
     }
 }
 
