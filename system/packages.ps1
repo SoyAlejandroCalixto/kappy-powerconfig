@@ -14,7 +14,6 @@ PkgsI -p @(
     'M2Team.NanaZip',
     'WhatsApp',
     'Valve.Steam',
-    'Telegram.TelegramDesktop',
     'Audacity.Audacity',
     'qBittorrent.qBittorrent',
     'Libretro.RetroArch',
@@ -22,9 +21,9 @@ PkgsI -p @(
     'fastfetch',
     'Schniz.fnm',
     'Python.Python.3.13',
-    'Spotify.Spotify'
+    'Canva.Affinity',
+    'Google.Antigravity'
 )
-
 
 # scoop buckets and packages
 scoop bucket add games
@@ -35,15 +34,15 @@ PkgsI -pm "scoop" -p @(
     'mingw',
     'nerd-fonts/CascadiaCode-NF',
     'games/dolphin-dev',
-    'versions/zed-nightly'
+    'games/eden'
 )
 
 Write-Host "`nApplications provided by installer only will open their download pages in your browser for installation..." -ForegroundColor Green
 
 $appsProvidedByInstaller = @(
-    'https://suyu.dev/',
     'https://www.blackmagicdesign.com/es/products/davinciresolve',
-    'https://www.amd.com/es/products/software/adrenalin.html'
+    'https://www.amd.com/es/products/software/adrenalin.html',
+    'https://github.com/pear-devs/pear-desktop'
 )
 foreach ($app in $appsProvidedByInstaller) {
     Start-Process $app
