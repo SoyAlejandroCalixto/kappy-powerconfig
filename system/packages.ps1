@@ -26,6 +26,7 @@ PkgsI -p @(
 )
 
 # scoop buckets and packages
+scoop bucket add extras
 scoop bucket add games
 scoop bucket add versions
 scoop bucket add nerd-fonts
@@ -34,15 +35,15 @@ PkgsI -pm "scoop" -p @(
     'mingw',
     'nerd-fonts/CascadiaCode-NF',
     'games/dolphin-dev',
-    'games/eden'
+    'games/eden',
+    'extras/youtube-music'
 )
 
 Write-Host "`nApplications provided by installer only will open their download pages in your browser for installation..." -ForegroundColor Green
 
 $appsProvidedByInstaller = @(
     'https://www.blackmagicdesign.com/es/products/davinciresolve',
-    'https://www.amd.com/es/products/software/adrenalin.html',
-    'https://github.com/pear-devs/pear-desktop'
+    'https://www.amd.com/es/products/software/adrenalin.html'
 )
 foreach ($app in $appsProvidedByInstaller) {
     Start-Process $app
