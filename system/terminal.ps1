@@ -2,18 +2,6 @@
 . $PSScriptRoot\..\lib\WriteFile.ps1
 Write-Host "`n-- Terminal setup --" -ForegroundColor Blue
 
-# terminal packages
-PkgsI -p @(
-    'JanDeDobbeleer.OhMyPosh',
-    'wez.wezterm',
-    'Microsoft.PowerShell',
-    'Neovim.Neovim',
-    'gerardog.gsudo',
-    'fzf',
-    'gokcehan.lf',
-    'yt-dlp'
-)
-
 # profile
 WriteFile -path $PROFILE -content @"
 clear
