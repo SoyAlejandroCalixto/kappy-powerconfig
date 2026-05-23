@@ -20,7 +20,17 @@ PkgsI -p @(
     'fastfetch',
     'Canva.Affinity',
     'Microsoft.VisualStudioCode',
-    'Stremio.Stremio'
+    'Stremio.Stremio',
+    'Starship.Starship',
+    'Microsoft.PowerShell',
+    'Neovim.Neovim',
+    'gerardog.gsudo',
+    'fzf',
+    'gokcehan.lf',
+    'yt-dlp',
+    'sxyazi.yazi',
+    'ajeetdsouza.zoxide'
+    
 )
 
 # scoop buckets and packages
