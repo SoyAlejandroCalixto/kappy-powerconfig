@@ -14,15 +14,13 @@ PkgsI -p @(
     'M2Team.NanaZip',
     'WhatsApp',
     'Valve.Steam',
-    'Audacity.Audacity',
     'qBittorrent.qBittorrent',
     'Libretro.RetroArch',
     'HandBrake.HandBrake',
     'fastfetch',
-    'Schniz.fnm',
-    'Python.Python.3.13',
     'Canva.Affinity',
-    'Google.Antigravity'
+    'Microsoft.VisualStudioCode',
+    'Stremio.Stremio'
 )
 
 # scoop buckets and packages
@@ -30,20 +28,21 @@ scoop bucket add extras
 scoop bucket add games
 scoop bucket add versions
 scoop bucket add nerd-fonts
+scoop bucket add winghostty https://github.com/amanthanvi/scoop-winghostty
 
 PkgsI -pm "scoop" -p @(
     'mingw',
     'nerd-fonts/CascadiaCode-NF',
     'games/dolphin-dev',
     'games/eden',
-    'extras/youtube-music'
+    'extras/pear-desktop',
+    'winghostty/winghostty'
 )
 
 Write-Host "`nApplications provided by installer only will open their download pages in your browser for installation..." -ForegroundColor Green
 
 $appsProvidedByInstaller = @(
-    'https://www.blackmagicdesign.com/es/products/davinciresolve',
-    'https://www.amd.com/es/products/software/adrenalin.html'
+    'https://www.amd.com/es/support/download/drivers.html'
 )
 foreach ($app in $appsProvidedByInstaller) {
     Start-Process $app
