@@ -30,7 +30,6 @@ PkgsI -p @(
     'yt-dlp',
     'sxyazi.yazi',
     'ajeetdsouza.zoxide'
-    
 )
 
 # scoop buckets and packages
