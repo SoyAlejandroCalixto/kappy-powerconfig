@@ -29,7 +29,9 @@ PkgsI -p @(
     'yt-dlp',
     'sxyazi.yazi',
     'ajeetdsouza.zoxide',
-    'Atuinsh.Atuin'
+    'Atuinsh.Atuin',
+    'jdx.mise',
+    'direnv.direnv'
 )
 
 # scoop buckets and packages
