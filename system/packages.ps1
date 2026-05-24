@@ -30,8 +30,6 @@ PkgsI -p @(
     'sxyazi.yazi',
     'ajeetdsouza.zoxide',
     'Atuinsh.Atuin',
-    'jdx.mise',
-    'direnv.direnv'
 )
 
 # scoop buckets and packages
