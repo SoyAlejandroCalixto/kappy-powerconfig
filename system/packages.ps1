@@ -26,10 +26,10 @@ PkgsI -p @(
     'Neovim.Neovim',
     'gerardog.gsudo',
     'fzf',
-    'gokcehan.lf',
     'yt-dlp',
     'sxyazi.yazi',
-    'ajeetdsouza.zoxide'
+    'ajeetdsouza.zoxide',
+    'Atuinsh.Atuin'
 )
 
 # scoop buckets and packages
@@ -37,7 +37,6 @@ scoop bucket add extras
 scoop bucket add games
 scoop bucket add versions
 scoop bucket add nerd-fonts
-scoop bucket add winghostty https://github.com/amanthanvi/scoop-winghostty
 
 PkgsI -pm "scoop" -p @(
     'mingw',
@@ -45,7 +44,6 @@ PkgsI -pm "scoop" -p @(
     'games/dolphin-dev',
     'games/eden',
     'extras/pear-desktop',
-    'winghostty/winghostty'
 )
 
 Write-Host "`nApplications provided by installer only will open their download pages in your browser for installation..." -ForegroundColor Green
