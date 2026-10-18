@@ -10,6 +10,7 @@ Invoke-Expression (& { (zoxide init powershell | Out-String) })
 atuin init powershell | Out-String | Invoke-Expression
 Import-Module Terminal-Icons
 Set-Alias vim nvim
+(&mise activate pwsh) | Out-String | Invoke-Expression
 "@
 
 # powershell modules
@@ -18,3 +19,10 @@ gsudo Install-Module -Name PSReadLine -AllowClobber -Force
 
 # starship config
 WriteFile -path "$env:USERPROFILE\.config\starship.toml" -content (Invoke-RestMethod "https://raw.githubusercontent.com/SoyAlejandroCalixto/arch4devs/refs/heads/main/.config/starship.toml")
+
+# Mise tools in PATH
+$shims = "$env:LOCALAPPDATA\mise\shims"
+$userPath = [Environment]::GetEnvironmentVariable('Path', 'User')
+if (($userPath -split ';') -notcontains $shims) {
+  [Environment]::SetEnvironmentVariable('Path', "$shims;$userPath", 'User')
+}
