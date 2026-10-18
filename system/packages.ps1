@@ -30,6 +30,7 @@ PkgsI -p @(
     'sxyazi.yazi',
     'ajeetdsouza.zoxide',
     'Atuinsh.Atuin',
+    'jdx.mise'
 )
 
 # scoop buckets and packages
@@ -43,7 +44,7 @@ PkgsI -pm "scoop" -p @(
     'nerd-fonts/JetBrainsMono-NF',
     'games/dolphin-dev',
     'games/eden',
-    'extras/pear-desktop',
+    'extras/pear-desktop'
 )
 
 Write-Host "`nApplications provided by installer only will open their download pages in your browser for installation..." -ForegroundColor Green
